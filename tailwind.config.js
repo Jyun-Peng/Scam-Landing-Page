@@ -7,6 +7,9 @@ module.exports = {
                 white: '#fefefe',
                 cyan: '#00e8cc',
             },
+            flex: {
+                half: '1 1 50%',
+            },
         },
     },
     plugins: [],
