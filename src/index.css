@@ -8,6 +8,7 @@
 }
 html {
     font-size: 16px;
+    color: #333;
 }
 
 body {
@@ -20,9 +21,4 @@ body {
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-div,
-header {
-    border: 1px solid #000;
 }

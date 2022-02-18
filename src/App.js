@@ -1,7 +1,21 @@
+import { useRef } from 'react';
 import Carousel from './Carousel';
+import {
+    imageIntro1,
+    imageIntro2,
+    imageIntro3,
+    imageCarousel1,
+    imageCarousel2,
+    imageCarousel3,
+    imageCarousel4,
+    imageCarousel5,
+    imageCarousel6,
+    man,
+    bg,
+} from './images';
 
-function Section({ children }) {
-    return <div className="px-4 py-48">{children}</div>;
+function Section({ children, top }) {
+    return <div className={(top ? 'pt-[40vh] pb-48' : 'py-48') + ' px-4'}>{children}</div>;
 }
 
 function Header({ children }) {
@@ -16,37 +30,60 @@ function DefaultContainer({ children }) {
     return <div className="max-w-5xl mx-auto">{children}</div>;
 }
 
-function Button({ text }) {
-    return <button className="inline-block">{text}</button>;
+function Button({ text, onClick }) {
+    return (
+        <button
+            onClick={onClick}
+            className="inline-block px-7 py-3 bg-cyan text-white font-bold text-[1.75rem] leading-none rounded-full"
+        >
+            {text}
+        </button>
+    );
 }
 
 function Card({ src, text }) {
     return (
         <div className="flex flex-col">
-            <img src={src} alt="icon" className="w-full aspect-square mb-5" />
-            <h3 className="text-center">{text}</h3>
+            <img src={src} alt="icon" className="w-full aspect-square mb-8" />
+            <h1 className="text-center text-lg font-bold">{text}</h1>
         </div>
     );
 }
 
 function Form() {
     return (
-        <form>
-            <label className="block flex items-center">
-                <p className="w-24 flex-none">姓名：</p>
-                <input type="text" className="w-full"></input>
+        <form className="max-w-md w-full">
+            <label className="block mb-6">
+                <p className="flex-none text-md text-darkGray mb-2">姓名</p>
+                <input type="text" placeholder="XXX" className="w-full bg-gray text-input rounded-lg px-4"></input>
             </label>
 
-            <label className="block flex items-center">
-                <p className="w-24 flex-none">電話：</p>
-                <input type="text" className="w-full"></input>
+            <label className="block mb-6">
+                <p className="flex-none text-md text-darkGray mb-2">電話</p>
+                <input
+                    type="text"
+                    placeholder="0123-456-789"
+                    className="w-full bg-gray text-input rounded-lg px-4"
+                ></input>
             </label>
-            <label className="block flex items-center">
-                <p className="w-24 flex-none">電子信箱：</p>
-                <input type="text" className="w-full"></input>
+            <label className="block mb-6">
+                <p className="flex-none text-md text-darkGray mb-2">電子信箱</p>
+                <input
+                    type="email"
+                    placeholder="XXXXXX@gmail.com"
+                    className="w-full bg-gray text-input rounded-lg px-4"
+                ></input>
+            </label>
+            <label className="block mb-8">
+                <p className="flex-none text-md text-darkGray mb-2">地址</p>
+                <input
+                    type="text"
+                    placeholder="XX市XX區XX路X段X號"
+                    className="w-full bg-gray text-input rounded-lg px-4"
+                ></input>
             </label>
             <div className="text-center">
-                <Button text="提交" />
+                <Button text="提交資料" />
             </div>
         </form>
     );
@@ -57,54 +94,62 @@ function App() {
         <div className="App">
             <Header>This is a Header</Header>
             <div className="wrapper bg-white pt-14">
+                <img src={bg} alt="bg" className="w-full fixed left-0 top-0" />
+                {/* <img src={man} alt="man" className="h-screen fixed right-[10vw] bottom-0" /> */}
                 <DefaultContainer>
-                    <Section>
-                        <h1>現在開始 翻轉人生</h1>
-                        <Button text={'了解更多'} />
+                    <Section top>
+                        <h1 className="text-lg font-bold mb-8 ">現在開始 翻轉人生</h1>
+                        <a href="#form">
+                            <Button text="了解更多" />
+                        </a>
                     </Section>
                     <Section>
                         <div className="flex">
-                            <div className="flex-auto px-10">
-                                <Card src="" text="自動化" />
+                            <div className="flex-auto px-12">
+                                <Card src={imageIntro1} text="自動化" />
                             </div>
-                            <div className="flex-auto px-10">
-                                <Card src="" text="高效率" />
+                            <div className="flex-auto px-12">
+                                <Card src={imageIntro2} text="高效率" />
                             </div>
-                            <div className="flex-auto px-10">
-                                <Card src="" text="全方面" />
+                            <div className="flex-auto px-12">
+                                <Card src={imageIntro3} text="全方面" />
                             </div>
                         </div>
                     </Section>
                     <Section>
                         <div className="flex">
                             <div className="flex-half">
-                                <Carousel srcList={[]} />
+                                <Carousel srcList={[imageCarousel1, imageCarousel2, imageCarousel3]} />
                             </div>
 
-                            <div className="flex-half flex flex-col justify-center items-center">
-                                <h2>大標題</h2>
-                                <p>副標題</p>
-                                <div className="text-center">
+                            <div className="flex-half flex flex-col justify-center items-center px-4">
+                                <h1 className="text-lg font-bold mb-4">大標題</h1>
+                                <p className="text-md text-darkGray mb-6">
+                                    副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題
+                                </p>
+                                <a href="#form">
                                     <Button text="了解更多" />
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </Section>
                     <Section>
                         <div className="flex">
-                            <div className="flex-half flex flex-col justify-center items-center">
-                                <h2>大標題</h2>
-                                <p>副標題</p>
-                                <Button text="了解更多" />
+                            <div className="flex-half flex flex-col justify-center items-center px-4">
+                                <h1 className="text-lg font-bold mb-4">大標題</h1>
+                                <p className="text-md text-darkGray mb-6">副標題</p>
+                                <a href="#form">
+                                    <Button text="了解更多" />
+                                </a>
                             </div>
                             <div className="flex-half">
-                                <Carousel srcList={[]} />
+                                <Carousel srcList={[imageCarousel4, imageCarousel5, imageCarousel6]} />
                             </div>
                         </div>
                     </Section>
                     <Section>
-                        <div className="flex flex-col items-center">
-                            <h2>想了解更多?</h2>
+                        <div className="flex flex-col items-center" id="form">
+                            <h1 className="text-lg font-bold mb-8">想了解更多?</h1>
                             <Form />
                         </div>
                     </Section>
