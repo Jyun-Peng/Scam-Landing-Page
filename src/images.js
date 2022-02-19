@@ -6,9 +6,9 @@ import imageCarousel1 from './images/team/group1.jpg';
 import imageCarousel2 from './images/team/group2.jpg';
 import imageCarousel3 from './images/team/group3.jpg';
 
-import imageCarousel4 from './images/presentation/presentation1.jpg';
-import imageCarousel5 from './images/presentation/presentation2.jpg';
-import imageCarousel6 from './images/presentation/presentation3.jpg';
+import imageCarousel4 from './images/couple/couple1.jpg';
+import imageCarousel5 from './images/couple/couple2.jpg';
+import imageCarousel6 from './images/couple/couple3.jpg';
 
 import man from './images/rich man with money.png';
 import bg from './images/Background.svg';
