@@ -1,5 +1,11 @@
 import { useEffect, useRef } from 'react';
-import Carousel from './Carousel';
+import Carousel from './components/Carousel';
+import Button from './components/Button';
+import Form from './components/Form';
+import Header from './components/Header';
+import DefaultContainer from './components/DefaultContainer';
+import Card from './components/Card';
+
 import {
     imageIntro1,
     imageIntro2,
@@ -10,87 +16,18 @@ import {
     imageCarousel4,
     imageCarousel5,
     imageCarousel6,
-    man,
-    bg,
 } from './images';
 
 function Section({ children }) {
-    return <div className="bg-white py-40">{children}</div>;
+    return <div className="bg-white py-20">{children}</div>;
 }
 
-function Header({ children }) {
-    return (
-        <header className="w-full h-14 fixed top-0 left-0 z-10">
-            <DefaultContainer>{children}</DefaultContainer>
-        </header>
-    );
+function LargeTitle({ children }) {
+    return <h1 className="text-xxl text-white font-bold mb-10 text-center ">{children}</h1>;
 }
 
-function DefaultContainer({ children }) {
-    return <div className="max-w-5xl w-full mx-auto px-4">{children}</div>;
-}
-
-function Button({ text, onClick }) {
-    return (
-        <button
-            onClick={onClick}
-            className={`inline-block px-7 py-3 bg-red text-white font-bold text-[1.75rem] leading-none rounded-full`}
-        >
-            {text}
-        </button>
-    );
-}
-
-function Card({ src, text }) {
-    return (
-        <div className="flex flex-col">
-            <img src={src} alt="icon" className="w-full aspect-square mb-8" />
-            <h2 className="text-center text-lg font-bold">{text}</h2>
-        </div>
-    );
-}
-
-function Form() {
-    return (
-        <form className="max-w-md w-full">
-            <label className="block mb-6">
-                <p className="flex-none text-md text-darkGray mb-2">姓名</p>
-                <input
-                    type="text"
-                    placeholder="XXX"
-                    className="w-full bg-gray text-input rounded-lg px-4 outline-none"
-                ></input>
-            </label>
-
-            <label className="block mb-6">
-                <p className="flex-none text-md text-darkGray mb-2">電話</p>
-                <input
-                    type="text"
-                    placeholder="0123-456-789"
-                    className="w-full bg-gray text-input rounded-lg px-4 outline-none"
-                ></input>
-            </label>
-            <label className="block mb-6">
-                <p className="flex-none text-md text-darkGray mb-2">電子信箱</p>
-                <input
-                    type="email"
-                    placeholder="XXXXXX@gmail.com"
-                    className="w-full bg-gray text-input rounded-lg px-4 outline-none"
-                ></input>
-            </label>
-            <label className="block mb-12">
-                <p className="flex-none text-md text-darkGray mb-2">地址</p>
-                <input
-                    type="text"
-                    placeholder="XX市XX區XX路X段X號"
-                    className="w-full bg-gray text-input rounded-lg px-4 outline-none"
-                ></input>
-            </label>
-            <div className="text-center">
-                <Button text="提交資料" />
-            </div>
-        </form>
-    );
+function MediumTitle({ children, marginBottom }) {
+    return <h2 className={`text-xl font-bold ${marginBottom ? 'mb-' + marginBottom : ''}`}>{children}</h2>;
 }
 
 function App() {
@@ -113,9 +50,6 @@ function App() {
 
     useEffect(() => {
         const handleScroll = function () {
-            if (refBg && refBg.current) {
-                refBg.current.style.transform = `translateY(${(50 * window.scrollY) / document.body.scrollHeight}%)`;
-            }
             if (window.scrollY > window.screen.height) console.log('header switch');
         };
 
@@ -128,21 +62,21 @@ function App() {
         <div className="App">
             <Header>This is a Header</Header>
             <div className="wrapper bg-white pt-14">
-                <div ref={refBg} className="w-full h-[100vh] absolute left-0 top-0 bg-heroImg bg-centerBottom bg-cover">
+                <div className="w-full h-[100vh] fixed left-0 top-0 bg-heroImg bg-center bg-cover">
                     <div className="w-full h-full absolute left-0 top-0 bg-mask"></div>
                 </div>
                 <div className="h-hero">
-                    <div className="w-full flex flex-col items-center absolute top-[50vh]">
-                        <h1 className="text-xl text-white font-bold mb-8 ">現在開始 翻轉人生</h1>
+                    <div className="w-full flex flex-col items-center absolute top-[45vh]">
+                        <LargeTitle>不想再被她已讀了?</LargeTitle>
                         <a href="#form">
-                            <Button text="了解更多" />
+                            <Button text="開始體驗" />
                         </a>
                     </div>
                 </div>
                 <Section>
                     <DefaultContainer>
-                        <div className="flex flex-col items-center">
-                            <h1 className="text-xl font-bold mb-12">為什麼要用?</h1>
+                        <div className="flex flex-col items-center pt-20">
+                            <MediumTitle marginBottom="12">為什麼要用AI網聊助手?</MediumTitle>
                             <div className="flex px-8 mb-12">
                                 <div className="flex-auto px-12">
                                     <Card src={imageIntro1} text="自動化" />
@@ -155,7 +89,7 @@ function App() {
                                 </div>
                             </div>
                             <a href="#form">
-                                <Button text="了解更多" />
+                                <Button text="開始體驗" />
                             </a>
                         </div>
                     </DefaultContainer>
@@ -168,12 +102,13 @@ function App() {
                             </div>
 
                             <div className="flex-half flex flex-col justify-center items-center px-4">
-                                <h1 className="text-xl font-bold mb-8">大標題</h1>
-                                <p className="text-md text-darkGray mb-10">
-                                    副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題副標題
+                                <MediumTitle marginBottom="6">愛情靠專業</MediumTitle>
+                                <p className="text-para text-darkGray mb-10">
+                                    由專業AI工程師、語言學家、心理學家共同開發的 AI
+                                    網聊助手，運用網路技術彌補你社交上的不足，讓你在情場上不再弱勢。
                                 </p>
                                 <a href="#form">
-                                    <Button text="了解更多" />
+                                    <Button text="開始體驗" />
                                 </a>
                             </div>
                         </div>
@@ -183,10 +118,13 @@ function App() {
                     <DefaultContainer>
                         <div className="flex">
                             <div className="flex-half flex flex-col justify-center items-center px-4">
-                                <h1 className="text-xl font-bold mb-8">大標題</h1>
-                                <p className="text-md text-darkGray mb-10">副標題</p>
+                                <MediumTitle marginBottom="6">要記得反饋</MediumTitle>
+                                <p className="text-para text-darkGray mb-10">
+                                    ：「抱歉最近被女友拉著到處跑，只有趁她在睡著了才能填寫反饋表單。我覺得這個 AI
+                                    網聊助手真的有料。等等，女友醒了，我又要忙了，就先這樣囉。 👍」
+                                </p>
                                 <a href="#form">
-                                    <Button text="了解更多" />
+                                    <Button text="開始體驗" />
                                 </a>
                             </div>
                             <div className="flex-half">
@@ -198,7 +136,7 @@ function App() {
                 <Section>
                     <DefaultContainer>
                         <div className="flex flex-col items-center" id="form">
-                            <h1 className="text-xl font-bold mb-12">想了解更多?</h1>
+                            <MediumTitle marginBottom="6">想了解更多?</MediumTitle>
                             <Form />
                         </div>
                     </DefaultContainer>

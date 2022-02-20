@@ -15,9 +15,11 @@ module.exports = {
                 half: '1 1 50%',
             },
             fontSize: {
+                xxl: ['4rem', '1'],
                 xl: ['3rem', '1'],
                 lg: ['2rem', '1'],
-                md: ['1.5rem', '1'],
+                md: ['1.2rem', '1'],
+                para: ['1.2rem', '1.5'],
                 input: ['1.2rem', '2'],
             },
             height: {
