@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Carousel from './components/Carousel';
 import Button from './components/Button';
 import Form from './components/Form';
@@ -22,8 +22,12 @@ function Section({ children }) {
     return <div className="bg-white py-20">{children}</div>;
 }
 
-function LargeTitle({ children }) {
-    return <h1 className="text-xxl text-white font-bold mb-10 text-center ">{children}</h1>;
+function LargeTitle({ children, marginBottom }) {
+    return (
+        <h1 className={`text-xxl text-white font-bold text-center ${marginBottom ? 'mb-' + marginBottom : ''}`}>
+            {children}
+        </h1>
+    );
 }
 
 function MediumTitle({ children, marginBottom }) {
@@ -32,6 +36,7 @@ function MediumTitle({ children, marginBottom }) {
 
 function App() {
     const refBg = useRef(null);
+    const [headerSwitch, setHeaderSwitch] = useState(false);
     function throttle(func, wait = 50) {
         let timeout;
         return function () {
@@ -50,7 +55,8 @@ function App() {
 
     useEffect(() => {
         const handleScroll = function () {
-            if (window.scrollY > window.screen.height) console.log('header switch');
+            if (window.scrollY + 56 > window.innerHeight) setHeaderSwitch(true);
+            else setHeaderSwitch(false);
         };
 
         document.addEventListener('scroll', throttle(handleScroll, 20));
@@ -60,14 +66,14 @@ function App() {
 
     return (
         <div className="App">
-            <Header>This is a Header</Header>
+            <Header beLeft={headerSwitch} />
             <div className="wrapper bg-white pt-14">
                 <div className="w-full h-[100vh] fixed left-0 top-0 bg-heroImg bg-center bg-cover">
                     <div className="w-full h-full absolute left-0 top-0 bg-mask"></div>
                 </div>
-                <div className="h-hero">
-                    <div className="w-full flex flex-col items-center absolute top-[45vh]">
-                        <LargeTitle>不想再被她已讀了?</LargeTitle>
+                <div className="h-hero flex items-center">
+                    <div className="w-full flex flex-col items-center">
+                        <LargeTitle marginBottom="10">不想再被她已讀了?</LargeTitle>
                         <a href="#form">
                             <Button text="開始體驗" />
                         </a>
@@ -76,7 +82,7 @@ function App() {
                 <Section>
                     <DefaultContainer>
                         <div className="flex flex-col items-center pt-20">
-                            <MediumTitle marginBottom="12">為什麼要用AI網聊助手?</MediumTitle>
+                            <MediumTitle marginBottom="12">使用AI網聊助手</MediumTitle>
                             <div className="flex px-8 mb-12">
                                 <div className="flex-auto px-12">
                                     <Card src={imageIntro1} text="自動化" />
