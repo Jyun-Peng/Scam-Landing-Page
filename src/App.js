@@ -22,16 +22,16 @@ function Section({ children }) {
     return <div className="bg-white py-20">{children}</div>;
 }
 
-function LargeTitle({ children, marginBottom }) {
-    return (
-        <h1 className={`text-xxl text-white font-bold text-center ${marginBottom ? 'mb-' + marginBottom : ''}`}>
-            {children}
-        </h1>
-    );
+function LargeTitle({ children }) {
+    return <h1 className={`text-xxl text-white font-bold text-center`}>{children}</h1>;
 }
 
-function MediumTitle({ children, marginBottom }) {
-    return <h2 className={`text-xl font-bold ${marginBottom ? 'mb-' + marginBottom : ''}`}>{children}</h2>;
+function MediumTitle({ children }) {
+    return <h2 className={`text-xl font-bold`}>{children}</h2>;
+}
+
+function Paragraph({ children }) {
+    return <p className="text-para text-darkGray">{children}</p>;
 }
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
 
     useEffect(() => {
         const handleScroll = function () {
-            if (window.scrollY + 56 > window.innerHeight) setHeaderSwitch(true);
+            if (window.scrollY > window.innerHeight) setHeaderSwitch(true);
             else setHeaderSwitch(false);
         };
 
@@ -72,8 +72,8 @@ function App() {
                     <div className="w-full h-full absolute left-0 top-0 bg-mask"></div>
                 </div>
                 <div className="h-hero flex items-center">
-                    <div className="w-full flex flex-col items-center">
-                        <LargeTitle marginBottom="10">不想再被她已讀了?</LargeTitle>
+                    <div className="w-full flex flex-col items-center gap-10">
+                        <LargeTitle>不想再被她已讀了?</LargeTitle>
                         <a href="#form">
                             <Button text="開始體驗" />
                         </a>
@@ -81,16 +81,16 @@ function App() {
                 </div>
                 <Section>
                     <DefaultContainer>
-                        <div className="flex flex-col items-center pt-20">
-                            <MediumTitle marginBottom="12">使用AI網聊助手</MediumTitle>
-                            <div className="flex px-8 mb-12">
-                                <div className="flex-auto px-12">
+                        <div className="flex flex-col items-center pt-20 gap-12">
+                            <MediumTitle>使用AI網聊助手</MediumTitle>
+                            <div className="flex md:px-8">
+                                <div className="flex-auto px-4 mobile:px-8 md:px-12">
                                     <Card src={imageIntro1} text="自動化" />
                                 </div>
-                                <div className="flex-auto px-12">
+                                <div className="flex-auto px-4 mobile:px-8 md:px-12">
                                     <Card src={imageIntro2} text="高效率" />
                                 </div>
-                                <div className="flex-auto px-12">
+                                <div className="flex-auto px-4 mobile:px-8 md:px-12">
                                     <Card src={imageIntro3} text="全方面" />
                                 </div>
                             </div>
@@ -107,12 +107,12 @@ function App() {
                                 <Carousel srcList={[imageCarousel1, imageCarousel2, imageCarousel3]} />
                             </div>
 
-                            <div className="flex-half flex flex-col justify-center items-center px-4">
-                                <MediumTitle marginBottom="6">愛情靠專業</MediumTitle>
-                                <p className="text-para text-darkGray mb-10">
+                            <div className="flex-half flex flex-col justify-center items-center px-4 gap-6">
+                                <MediumTitle>愛情靠專業</MediumTitle>
+                                <Paragraph>
                                     由專業AI工程師、語言學家、心理學家共同開發的 AI
                                     網聊助手，運用網路技術彌補你社交上的不足，讓你在情場上不再弱勢。
-                                </p>
+                                </Paragraph>
                                 <a href="#form">
                                     <Button text="開始體驗" />
                                 </a>
@@ -123,12 +123,12 @@ function App() {
                 <Section>
                     <DefaultContainer>
                         <div className="flex">
-                            <div className="flex-half flex flex-col justify-center items-center px-4">
+                            <div className="flex-half flex flex-col justify-center items-center px-4 gap-6">
                                 <MediumTitle marginBottom="6">要記得反饋</MediumTitle>
-                                <p className="text-para text-darkGray mb-10">
+                                <Paragraph>
                                     ：「抱歉最近被女友拉著到處跑，只有趁她在睡著了才能填寫反饋表單。我覺得這個 AI
                                     網聊助手真的有料。等等，女友醒了，我又要忙了，就先這樣囉。 👍」
-                                </p>
+                                </Paragraph>
                                 <a href="#form">
                                     <Button text="開始體驗" />
                                 </a>
@@ -141,8 +141,8 @@ function App() {
                 </Section>
                 <Section>
                     <DefaultContainer>
-                        <div className="flex flex-col items-center" id="form">
-                            <MediumTitle marginBottom="6">想了解更多?</MediumTitle>
+                        <div className="flex flex-col items-center gap-6" id="form">
+                            <MediumTitle>想了解更多?</MediumTitle>
                             <Form />
                         </div>
                     </DefaultContainer>
