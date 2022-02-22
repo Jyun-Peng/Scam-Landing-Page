@@ -18,7 +18,7 @@ export default function Form() {
                 <p className={LabelClass}>電子信箱</p>
                 <input type="email" placeholder="XXXXXX@gmail.com" className={InputClass}></input>
             </label>
-            <label className="block mb-12">
+            <label className="block mb-8">
                 <p className={LabelClass}>地址</p>
                 <input type="text" placeholder="XX市XX區XX路X段X號" className={InputClass}></input>
             </label>
