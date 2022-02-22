@@ -13,14 +13,19 @@ module.exports = {
             },
             flex: {
                 half: '1 1 50%',
+                full: '1 1 100%',
             },
             fontSize: {
                 xxl: ['4rem', '1'],
+                xxl_mobile: ['3.5rem', '1'],
                 xl: ['3rem', '1'],
+                xl_mobile: ['2.6rem', '1'],
                 lg: ['2rem', '1'],
+                lg_mobile: ['1.8rem', '1'],
                 md: ['1.2rem', '1'],
                 para: ['1.2rem', '1.5'],
                 input: ['1.2rem', '2'],
+                logo: ['1.8rem', '1'],
             },
             height: {
                 screen: '90vh',
@@ -34,6 +39,9 @@ module.exports = {
             },
             backgroundPosition: {
                 centerBottom: 'center bottom',
+            },
+            screens: {
+                mobile: '414px',
             },
         },
     },
