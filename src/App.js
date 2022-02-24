@@ -35,7 +35,7 @@ function Paragraph({ children }) {
 }
 
 function App() {
-    const refBg = useRef(null);
+    const heroRef = useRef(null);
     const [headerSwitch, setHeaderSwitch] = useState(false);
     function throttle(func, wait = 50) {
         let timeout;
@@ -57,6 +57,11 @@ function App() {
         const handleScroll = function () {
             if (window.scrollY > window.innerHeight) setHeaderSwitch(true);
             else setHeaderSwitch(false);
+            const pos = 3 * ((window.innerHeight - window.scrollY) / window.innerHeight - 0.66666) + 0.6;
+            if (pos >= 1) heroRef.current.style.opacity = '1';
+            else if (pos < 0.3) heroRef.current.style.opacity = '0.25';
+            else heroRef.current.style.opacity = `${pos}`;
+            // console.log(pos);
         };
 
         document.addEventListener('scroll', throttle(handleScroll, 20));
@@ -72,7 +77,7 @@ function App() {
                     <div className="w-full h-full absolute left-0 top-0 bg-mask"></div>
                 </div>
                 <div className="h-hero flex items-center">
-                    <div className="w-full flex flex-col items-center gap-10 px-4">
+                    <div ref={heroRef} className="w-full flex flex-col items-center gap-10 px-4">
                         <LargeTitle>不想再被她已讀了?</LargeTitle>
                         <a href="#form">
                             <Button text="開始體驗" />
