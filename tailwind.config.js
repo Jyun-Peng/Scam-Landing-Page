@@ -9,6 +9,8 @@ module.exports = {
                 white: '#fefefe',
                 cyan: '#3d5a80',
                 red: '#ff4d6d',
+                red_hover: '#e43e5c',
+                red_active: '#d63c58',
                 mask: 'rgba(0, 0, 0, 0.5)',
             },
             flex: {
@@ -42,6 +44,9 @@ module.exports = {
             },
             screens: {
                 mobile: '414px',
+            },
+            transitionProperty: {
+                header: 'left, transform',
             },
         },
     },
