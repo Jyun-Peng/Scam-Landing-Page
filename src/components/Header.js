@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
 import DefaultContainer from './DefaultContainer';
 
-export default function Header({ children, beLeft }) {
-    const [headerIsLeft, setHeaderIsLeft] = useState(beLeft);
+export default function Header({ beLeft }) {
     const handleLogoClicked = function () {
         window.scrollTo(0, 0);
     };
