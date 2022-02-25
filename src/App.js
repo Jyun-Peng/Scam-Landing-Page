@@ -18,20 +18,10 @@ import {
     imageCarousel6,
 } from './images';
 
+import { LargeTitle, MediumTitle, Paragraph } from './components/Text';
+
 function Section({ children }) {
     return <div className="bg-white py-20">{children}</div>;
-}
-
-function LargeTitle({ children }) {
-    return <h1 className={`text-xxl_mobile md:text-xxl text-white font-bold text-center`}>{children}</h1>;
-}
-
-function MediumTitle({ children }) {
-    return <h2 className={`text-xl_mobile md:text-xl font-bold`}>{children}</h2>;
-}
-
-function Paragraph({ children }) {
-    return <p className="text-para text-darkGray">{children}</p>;
 }
 
 function App() {
@@ -52,6 +42,24 @@ function App() {
             }
         };
     }
+    const cardTexts = [
+        {
+            title: '自動化',
+            paragraph: ['要聊什麼話題才好？', <br />, '不用擔心，AI網聊助手幫你解決。'],
+        },
+        {
+            title: '高效率',
+            paragraph: ['學姊洗澡洗一年？', <br />, 'AI網聊助手讓她瞬間跟你報備。'],
+        },
+        {
+            title: '全方面',
+            paragraph: ['沒有共同興趣？', <br />, 'AI網聊助手讓你比她懂的更多。'],
+        },
+    ];
+
+    const scrollToBottom = function () {
+        window.scrollTo(0, document.body.scrollHeight);
+    };
 
     useEffect(() => {
         const handleScroll = function () {
@@ -78,30 +86,26 @@ function App() {
                 </div>
                 <div className="h-hero flex items-center">
                     <div ref={heroRef} className="w-full flex flex-col items-center gap-10 px-4">
-                        <LargeTitle>不想再被她已讀了?</LargeTitle>
-                        <a href="#form">
-                            <Button text="開始體驗" />
-                        </a>
+                        <LargeTitle center>不想再被她已讀了?</LargeTitle>
+                        <Button text="開始體驗" onClick={scrollToBottom} />
                     </div>
                 </div>
                 <Section>
                     <DefaultContainer>
                         <div className="flex flex-col items-center pt-20 gap-12">
                             <MediumTitle>使用AI網聊助手</MediumTitle>
-                            <div className="flex md:px-8">
-                                <div className="flex-auto px-4 mobile:px-8 md:px-12">
-                                    <Card src={imageIntro1} text="自動化" />
+                            <div className="flex md:px-6">
+                                <div className="flex-1/3 px-2 mobile:px-6 desktop:px-10">
+                                    <Card src={imageIntro1} text={cardTexts[0]} />
                                 </div>
-                                <div className="flex-auto px-4 mobile:px-8 md:px-12">
-                                    <Card src={imageIntro2} text="高效率" />
+                                <div className="flex-1/3 px-2 mobile:px-6 desktop:px-10">
+                                    <Card src={imageIntro2} text={cardTexts[1]} />
                                 </div>
-                                <div className="flex-auto px-4 mobile:px-8 md:px-12">
-                                    <Card src={imageIntro3} text="全方面" />
+                                <div className="flex-1/3 px-2 mobile:px-6 desktop:px-10">
+                                    <Card src={imageIntro3} text={cardTexts[2]} />
                                 </div>
                             </div>
-                            <a href="#form">
-                                <Button text="開始體驗" />
-                            </a>
+                            <Button text="開始體驗" onClick={scrollToBottom} />
                         </div>
                     </DefaultContainer>
                 </Section>
@@ -118,14 +122,10 @@ function App() {
                                     由專業AI工程師、語言學家、心理學家共同開發的 AI
                                     網聊助手，運用網路技術彌補你社交上的不足，讓你在情場上不再弱勢。
                                 </Paragraph>
-                                <a href="#form" className="hidden mobile:block">
-                                    <Button text="開始體驗" />
-                                </a>
+                                <Button text="開始體驗" onClick={scrollToBottom} />
                             </div>
                             <div className="text-center flex-full block mobile:hidden order-3">
-                                <a href="#form">
-                                    <Button text="開始體驗" />
-                                </a>
+                                <Button text="開始體驗" onClick={scrollToBottom} />
                             </div>
                         </div>
                     </DefaultContainer>
@@ -139,17 +139,13 @@ function App() {
                                     ：「抱歉最近被女友拉著到處跑，只有趁她在睡著了才能填寫反饋表單。我覺得這個 AI
                                     網聊助手真的有料。等等，女友醒了，我又要忙了，就先這樣囉。 👍」
                                 </Paragraph>
-                                <a href="#form" className="hidden mobile:block">
-                                    <Button text="開始體驗" />
-                                </a>
+                                <Button text="開始體驗" onClick={scrollToBottom} />
                             </div>
                             <div className="flex-full mobile:flex-half">
                                 <Carousel srcList={[imageCarousel4, imageCarousel5, imageCarousel6]} />
                             </div>
                             <div className="text-center flex-full block mobile:hidden order-3">
-                                <a href="#form">
-                                    <Button text="開始體驗" />
-                                </a>
+                                <Button text="開始體驗" onClick={scrollToBottom} />
                             </div>
                         </div>
                     </DefaultContainer>
