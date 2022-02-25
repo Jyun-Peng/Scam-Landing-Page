@@ -15,6 +15,7 @@ module.exports = {
             },
             flex: {
                 half: '1 1 50%',
+                '1/3': '1 1 33.33333%',
                 full: '1 1 100%',
             },
             fontSize: {
@@ -44,6 +45,7 @@ module.exports = {
             },
             screens: {
                 mobile: '414px',
+                desktop: '768px',
             },
             transitionProperty: {
                 header: 'left, transform',
