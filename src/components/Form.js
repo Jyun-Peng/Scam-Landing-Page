@@ -23,7 +23,7 @@ export default function Form() {
                 <input type="text" placeholder="XX市XX區XX路X段X號" className={InputClass}></input>
             </label>
             <div className="text-center">
-                <Button text="提交資料" />
+                <Button text="提交資料" onClick={() => window.alert('可惜我也交不到女友...')} />
             </div>
         </form>
     );
