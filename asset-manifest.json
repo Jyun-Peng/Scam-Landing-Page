@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/Scam-Landing-Page/static/css/main.90acfc6b.css",
-    "main.js": "/Scam-Landing-Page/static/js/main.bce9c2b0.js",
-    "static/media/rich man with money.png": "/Scam-Landing-Page/static/media/rich man with money.ddff698efdefc7ffbbd4.png",
+    "main.css": "/Scam-Landing-Page/static/css/main.7e0b3e7a.css",
+    "main.js": "/Scam-Landing-Page/static/js/main.0d9625d3.js",
     "static/media/group2.jpg": "/Scam-Landing-Page/static/media/group2.3157957274695e7e7a5d.jpg",
     "static/media/hero.jpg": "/Scam-Landing-Page/static/media/hero.088051e82eaa72b46004.jpg",
     "static/media/couple3.jpg": "/Scam-Landing-Page/static/media/couple3.8d3da640dd26a98df511.jpg",
@@ -14,13 +13,12 @@
     "static/media/worldwide.png": "/Scam-Landing-Page/static/media/worldwide.d43461641f959e418d99.png",
     "static/media/clock.png": "/Scam-Landing-Page/static/media/clock.a4fbeb3db7b2be371573.png",
     "static/media/robot.png": "/Scam-Landing-Page/static/media/robot.f9f5f0db3c6d3502097f.png",
-    "static/media/Background.svg": "/Scam-Landing-Page/static/media/Background.7355c62dd994c431d48c2cf53ac1b06a.svg",
     "index.html": "/Scam-Landing-Page/index.html",
-    "main.90acfc6b.css.map": "/Scam-Landing-Page/static/css/main.90acfc6b.css.map",
-    "main.bce9c2b0.js.map": "/Scam-Landing-Page/static/js/main.bce9c2b0.js.map"
+    "main.7e0b3e7a.css.map": "/Scam-Landing-Page/static/css/main.7e0b3e7a.css.map",
+    "main.0d9625d3.js.map": "/Scam-Landing-Page/static/js/main.0d9625d3.js.map"
   },
   "entrypoints": [
-    "static/css/main.90acfc6b.css",
-    "static/js/main.bce9c2b0.js"
+    "static/css/main.7e0b3e7a.css",
+    "static/js/main.0d9625d3.js"
   ]
 }
