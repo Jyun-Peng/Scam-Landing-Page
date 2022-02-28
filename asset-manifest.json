@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Scam-Landing-page/static/css/main.2ff30ee2.css",
-    "main.js": "/Scam-Landing-page/static/js/main.8aa4783a.js",
-    "static/media/rich man with money.png": "/Scam-Landing-page/static/media/rich man with money.ddff698efdefc7ffbbd4.png",
-    "static/media/group2.jpg": "/Scam-Landing-page/static/media/group2.3157957274695e7e7a5d.jpg",
-    "static/media/hero.jpg": "/Scam-Landing-page/static/media/hero.088051e82eaa72b46004.jpg",
-    "static/media/couple3.jpg": "/Scam-Landing-page/static/media/couple3.8d3da640dd26a98df511.jpg",
-    "static/media/group3.jpg": "/Scam-Landing-page/static/media/group3.84ded423d743c76c0f4e.jpg",
-    "static/media/group1.jpg": "/Scam-Landing-page/static/media/group1.0badf1148c9e6e295e5b.jpg",
-    "static/media/couple2.jpg": "/Scam-Landing-page/static/media/couple2.573e3d5e28c243f8f80b.jpg",
-    "static/media/couple1.jpg": "/Scam-Landing-page/static/media/couple1.9c9b8a6965163afdb5b7.jpg",
-    "static/media/phone.png": "/Scam-Landing-page/static/media/phone.4678dcedd4b677dec7b2.png",
-    "static/media/worldwide.png": "/Scam-Landing-page/static/media/worldwide.d43461641f959e418d99.png",
-    "static/media/clock.png": "/Scam-Landing-page/static/media/clock.a4fbeb3db7b2be371573.png",
-    "static/media/robot.png": "/Scam-Landing-page/static/media/robot.f9f5f0db3c6d3502097f.png",
-    "static/media/Background.svg": "/Scam-Landing-page/static/media/Background.7355c62dd994c431d48c2cf53ac1b06a.svg",
-    "index.html": "/Scam-Landing-page/index.html",
-    "main.2ff30ee2.css.map": "/Scam-Landing-page/static/css/main.2ff30ee2.css.map",
-    "main.8aa4783a.js.map": "/Scam-Landing-page/static/js/main.8aa4783a.js.map"
+    "main.css": "/Scam-Landing-Page/static/css/main.90acfc6b.css",
+    "main.js": "/Scam-Landing-Page/static/js/main.bce9c2b0.js",
+    "static/media/rich man with money.png": "/Scam-Landing-Page/static/media/rich man with money.ddff698efdefc7ffbbd4.png",
+    "static/media/group2.jpg": "/Scam-Landing-Page/static/media/group2.3157957274695e7e7a5d.jpg",
+    "static/media/hero.jpg": "/Scam-Landing-Page/static/media/hero.088051e82eaa72b46004.jpg",
+    "static/media/couple3.jpg": "/Scam-Landing-Page/static/media/couple3.8d3da640dd26a98df511.jpg",
+    "static/media/group3.jpg": "/Scam-Landing-Page/static/media/group3.84ded423d743c76c0f4e.jpg",
+    "static/media/group1.jpg": "/Scam-Landing-Page/static/media/group1.0badf1148c9e6e295e5b.jpg",
+    "static/media/couple2.jpg": "/Scam-Landing-Page/static/media/couple2.573e3d5e28c243f8f80b.jpg",
+    "static/media/couple1.jpg": "/Scam-Landing-Page/static/media/couple1.9c9b8a6965163afdb5b7.jpg",
+    "static/media/phone.png": "/Scam-Landing-Page/static/media/phone.4678dcedd4b677dec7b2.png",
+    "static/media/worldwide.png": "/Scam-Landing-Page/static/media/worldwide.d43461641f959e418d99.png",
+    "static/media/clock.png": "/Scam-Landing-Page/static/media/clock.a4fbeb3db7b2be371573.png",
+    "static/media/robot.png": "/Scam-Landing-Page/static/media/robot.f9f5f0db3c6d3502097f.png",
+    "static/media/Background.svg": "/Scam-Landing-Page/static/media/Background.7355c62dd994c431d48c2cf53ac1b06a.svg",
+    "index.html": "/Scam-Landing-Page/index.html",
+    "main.90acfc6b.css.map": "/Scam-Landing-Page/static/css/main.90acfc6b.css.map",
+    "main.bce9c2b0.js.map": "/Scam-Landing-Page/static/js/main.bce9c2b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ff30ee2.css",
-    "static/js/main.8aa4783a.js"
+    "static/css/main.90acfc6b.css",
+    "static/js/main.bce9c2b0.js"
   ]
 }
