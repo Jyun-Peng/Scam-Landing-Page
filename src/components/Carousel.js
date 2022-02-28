@@ -8,11 +8,15 @@ export default function Carousel({ srcList }) {
     };
 
     const ThumbnailImgClass = 'w-full aspect-[2/1] object-cover object-center';
-    const ThumbnailContainerClass = 'flex-auto cursor-pointer';
+    const ThumbnailContainerClass = 'flex-auto cursor-pointer rounded overflow-hidden';
     const ThumbnailMaskClass = 'absolute w-full h-full left-0 top-0';
     return (
-        <div>
-            <img src={srcList[currImage]} alt="image" className="w-full aspect-[3/2] object-cover object-center mb-2" />
+        <div className="rounded overflow-hidden">
+            <img
+                src={srcList[currImage]}
+                alt="image"
+                className="w-full aspect-[3/2] object-cover object-center mb-2 rounded overflow-hidden"
+            />
             <div className="flex gap-2">
                 <div className={ThumbnailContainerClass} onClick={() => handleClick(0)}>
                     <img src={srcList[0]} alt="image" className={ThumbnailImgClass} />
