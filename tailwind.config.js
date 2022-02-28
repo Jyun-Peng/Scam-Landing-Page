@@ -23,8 +23,8 @@ module.exports = {
                 xxl_mobile: ['3.5rem', '1'],
                 xl: ['3rem', '1'],
                 xl_mobile: ['2.6rem', '1'],
-                lg: ['2rem', '1'],
-                lg_mobile: ['1.8rem', '1'],
+                lg: ['1.6rem', '1'],
+                lg_mobile: ['1.4rem', '1'],
                 md: ['1.2rem', '1'],
                 para: ['1.2rem', '1.5'],
                 input: ['1.2rem', '2'],
@@ -39,9 +39,11 @@ module.exports = {
             },
             backgroundImage: {
                 heroImg: "url('./images/hero.jpg')",
+                phoneImg: 'url(./images/phone.png)',
             },
             backgroundPosition: {
                 centerBottom: 'center bottom',
+                centerTop: 'center top',
             },
             screens: {
                 mobile: '414px',
